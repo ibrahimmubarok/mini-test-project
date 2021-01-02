@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/margin_horizontal"
+    android:orientation="vertical"
+    tools:context=".fragment.MoviesFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_horizontal">
+
+        <ProgressBar
+            android:id="@+id/progress_bar_movies"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:indeterminateDrawable="@drawable/progress"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_popular_movies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/popular_movies"
+                android:textStyle="bold"
+                android:textSize="@dimen/item_18sp"
+                android:textColor="@android:color/black"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_popular_movies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_horizontal"
+                android:layout_marginBottom="@dimen/margin_horizontal"
+                android:layout_below="@id/tv_popular_movies"
+                tools:listitem="@layout/item_popular_movies"
+                tools:itemCount="1"
+                android:overScrollMode="never">
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/tv_coming_soon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rv_popular_movies"
+                android:text="@string/coming_soon"
+                android:textStyle="bold"
+                android:textSize="@dimen/item_18sp"
+                android:textColor="@android:color/black"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_coming_soon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_horizontal"
+                android:layout_marginBottom="@dimen/margin_horizontal"
+                android:layout_below="@id/tv_coming_soon"
+                tools:listitem="@layout/item_coming_soon"
+                tools:itemCount="1"
+                android:overScrollMode="never">
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</ScrollView>
